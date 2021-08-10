@@ -7,20 +7,12 @@
 
 import UIKit
 
-enum Event {
-    case buttonTapped
-}
-
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
-    var children: [Coordinator]? { get set }
-    
+    var children: [Coordinator] { get set }
     func start()
-    func eventOccured(with type: Event)
 }
 
 protocol Coordinating {
     var coordinator: Coordinator? { get set }
-    
-    
 }

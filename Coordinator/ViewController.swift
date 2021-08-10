@@ -25,7 +25,7 @@ class ViewController: UIViewController, Coordinating {
     }
     
     @objc func onTapNavigation(_ sender: UIButton) {
-        coordinator?.eventOccured(with: .buttonTapped)
+        
     }
 }
 
