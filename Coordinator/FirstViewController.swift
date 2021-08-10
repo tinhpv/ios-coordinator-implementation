@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, Coordinating {
+class FirstViewController: UIViewController, Coordinating {
     var coordinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,8 @@ class ViewController: UIViewController, Coordinating {
     }
     
     @objc func onTapNavigation(_ sender: UIButton) {
-        
+        guard coordinator is FirstCoordinator else { return }
+        (coordinator as! FirstCoordinator).moveToSecondScreen()
     }
 }
 

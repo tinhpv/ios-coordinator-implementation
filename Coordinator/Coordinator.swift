@@ -7,10 +7,20 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var navigationController: UINavigationController? { get set }
     var children: [Coordinator] { get set }
     func start()
+}
+
+extension Coordinator {
+    func add(coordinator: Coordinator) {
+        children.append(coordinator)
+    }
+    
+    func remove(coordinator: Coordinator) {
+        children = children.filter { $0 !== coordinator }
+    }
 }
 
 protocol Coordinating {

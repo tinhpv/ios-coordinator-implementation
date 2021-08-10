@@ -1,13 +1,13 @@
 //
-//  MainCoordinator.swift
+//  SecondCoordinator.swift
 //  Coordinator
 //
-//  Created by TinhPV on 8/10/21.
+//  Created by TinhPV on 8/11/21.
 //
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class SecondCoordinator: Coordinator {
     var navigationController: UINavigationController?
     var children: [Coordinator] = [Coordinator]()
     
@@ -16,9 +16,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        var vc: UIViewController & Coordinating = ViewController()
+        var vc: UIViewController & Coordinating = SecondViewController()
         vc.coordinator = self
-        navigationController?.setViewControllers([vc], animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
-
